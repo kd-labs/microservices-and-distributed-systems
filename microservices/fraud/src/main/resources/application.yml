@@ -9,10 +9,10 @@ spring:
     password: password
     url: jdbc:postgresql://localhost:5432/fraud
   jpa:
+    show-sql: true
     hibernate:
       ddl-auto: update
     properties:
-      show-sql: true
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
