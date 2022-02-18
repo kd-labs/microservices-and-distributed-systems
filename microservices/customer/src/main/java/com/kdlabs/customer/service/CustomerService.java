@@ -2,6 +2,8 @@ package com.kdlabs.customer.service;
 
 import com.kdlabs.clients.fraud.FraudClient;
 import com.kdlabs.clients.fraud.dto.FraudCheckResponse;
+import com.kdlabs.clients.notification.NotificationClient;
+import com.kdlabs.clients.notification.dto.NotificationRequest;
 import com.kdlabs.customer.dto.CustomerRequest;
 import com.kdlabs.customer.entity.Customer;
 import com.kdlabs.customer.repository.CustomerRepository;
@@ -17,6 +19,7 @@ public class CustomerService {
 
     private final CustomerRepository customerRepository;
     private final FraudClient fraudClient;
+    private final NotificationClient notificationClient;
 
     public void registerCustomer(CustomerRequest request) {
         Customer newCustomer = Customer.builder()
@@ -46,6 +49,12 @@ public class CustomerService {
         }
 
         // TODO: send notification
+        notificationClient.sendNotification(
+                new NotificationRequest(
+                        newCustomer.getId(),
+                        String.format("%s %s", newCustomer.getFirstName(), newCustomer.getLastName()),
+                        newCustomer.getEmail(),
+                        "You have been registered in the system"));
 
     }
 }
