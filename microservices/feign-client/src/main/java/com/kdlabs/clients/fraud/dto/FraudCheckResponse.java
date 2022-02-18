@@ -1,11 +1,12 @@
-package com.kdlabs.fraud.dto;
+package com.kdlabs.clients.fraud.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class FraudCheckResponse {
 
     private Integer customerId;

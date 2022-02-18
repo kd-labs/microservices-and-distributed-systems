@@ -4,10 +4,12 @@ import com.kdlabs.customer.dto.CustomerRequest;
 import com.kdlabs.customer.service.CustomerService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@EnableFeignClients(basePackages = "com.kdlabs.clients")
 @RequestMapping("api/v1/customers")
 @Slf4j
 @AllArgsConstructor

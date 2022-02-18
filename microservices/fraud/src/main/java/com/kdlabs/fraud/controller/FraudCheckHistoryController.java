@@ -1,6 +1,6 @@
 package com.kdlabs.fraud.controller;
 
-import com.kdlabs.fraud.dto.FraudCheckResponse;
+import com.kdlabs.clients.fraud.dto.FraudCheckResponse;
 import com.kdlabs.fraud.service.FraudCheckHistoryService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
