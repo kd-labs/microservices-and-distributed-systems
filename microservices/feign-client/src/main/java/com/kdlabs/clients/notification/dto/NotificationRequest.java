@@ -5,8 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
-@NoArgsConstructor
-public class NotificationResponse {
+public class NotificationRequest {
 
-    private String name;
+    private Integer customerId;
+    private String customerName;
+    private String message;
 }
