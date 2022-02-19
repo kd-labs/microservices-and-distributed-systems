@@ -16,6 +16,8 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
+  zipkin:
+    baseUrl: http://localhost:9411
 
 eureka:
   client:
